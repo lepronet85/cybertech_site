@@ -23,8 +23,6 @@ class Send_email extends BaseController
             $email->setSubject($email->request->getPost('subject'));
             $email->setMessage($email->request->getPost('message'));
 
-            $email->send();
-
             if ($email->send())
             {
                 echo 'OK';
