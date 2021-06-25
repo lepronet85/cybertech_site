@@ -32,8 +32,6 @@ class Send_email extends BaseController
             {
                 echo 'OK';
             }
-   
-            echo "Nom : ".$name."E-mail : ".$from."Sujet : ".$subject."Message : ".$message;
 
         }
 	}
