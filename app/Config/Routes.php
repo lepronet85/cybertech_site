@@ -33,11 +33,11 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->post('send_email/', 'Send_email::index');
+$routes->post('send_email/', 'SendEmail::index');
 $routes->get('/admin', 'Admin::index');
 $routes->get('/admin/sign_in', 'Admin::index');
 $routes->get('/admin/dashbord', 'Admin::dashbord');
-$routes->get('/get_quote', 'Admin::dashbord');
+$routes->get('/get_quote', 'GetQuote::index');
 
 /*
  * --------------------------------------------------------------------
