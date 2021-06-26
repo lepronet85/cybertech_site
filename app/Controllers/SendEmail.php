@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Send_email extends BaseController
+class SendEmail extends BaseController
 {
 	public function index()
 	{
