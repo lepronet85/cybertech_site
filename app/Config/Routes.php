@@ -37,7 +37,7 @@ $routes->post('send_email/', 'SendEmail::index');
 $routes->get('/admin', 'Admin::index');
 $routes->get('/admin/sign_in', 'Admin::index');
 $routes->get('/admin/dashbord', 'Admin::dashbord');
-$routes->get('/get_quote', 'GetQuote::index');
+$routes->post('/get_quote', 'GetQuote::index');
 
 /*
  * --------------------------------------------------------------------
