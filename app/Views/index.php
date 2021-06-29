@@ -995,22 +995,25 @@
         </div>
         <div class="modal-body">
           <p>Merci de remplir le formulaire ci-dessous. Nous vous adresserons un devis dans un délai de 24 heures.</p>
-          <form action="/get_quote" id="getAQuote" enctype="multipart/form-data" method="post">
+          <form action="/get_quote" id="getAQuote" class="getAQuote" enctype="multipart/form-data" method="post">
               <?= csrf_field() ?>
               <div class="row">
                 <div class="form-group col-md-6">
                   <label style="font-weight: bold;">Nom &amp; Prénom*</label>
-                  <input type="text" name="name" class="form-control">
+                  <input type="text" name="name" class="form-control" data-rule="minlen:1" data-msg="Ce champ ne peut être laissé vide">
+                  <div class="validate"></div>
                 </div>
                 <div class="form-group col-md-6">
                   <label style="font-weight: bold;">Numéro de téléphone *</label>
-                  <input type="text" name="phone" class="form-control">
+                  <input type="text" name="phone" class="form-control" data-rule="minlen:1" data-msg="Ce champ ne peut être laissé vide">
+                  <div class="validate"></div>
                 </div>
               </div>
               <div class="row">
                 <div class="form-group col-md-6">
                   <label style="font-weight: bold;">Email*</label>
-                  <input type="email" name="email" class="form-control">
+                  <input type="email" name="email" class="form-control" data-rule="email" data-msg="Veuillez saisir un e-mail valide">
+                  <div class="validate"></div>
                 </div>
                 <div class="form-group col-md-6">
                   <label style="font-weight: bold;">Pays</label>
@@ -1030,7 +1033,7 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label style="font-weight: bold;">Type de structure*</label>
-                  <select class="form-control" name="companyType" id="companyType">
+                  <select class="form-control" name="companyType" id="companyType" data-msg="Ce champ ne peut être laissé vide">
                     <option value="Choisir">Choisir</option>
                     <option value="Entreprise">Entreprise</option>
                     <option value="Institution publique">Institution publique</option>
@@ -1038,6 +1041,7 @@
                     <option value="Startup">Startup</option>
                     <option value="Autres">Autres</option>
                   </select>
+                  <div class="validate"></div>
                 </div>
               </div>
               <div class="row">
@@ -1068,6 +1072,11 @@
                     <label class="custom-file-label" for="customFile" data-browse="Parcourir">Choisir un fichier</label>
                   </div>
                 </div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Chargement...</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Votre message a été envoyé. On vous remercie!</div>
               </div>
               <div class="text-center">
                 <button type="submit" name="getAQuote" class="btn btn-primary btn-block btn-getAQuote" style="background-color: #2da9a7; border-color: #2da9a7; font-weight: bold;">Envoyer <i class="fa fa-arrow-circle-right"></i></button>
